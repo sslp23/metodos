@@ -159,49 +159,49 @@ def adam_bashfort(y, t0, h, n, func, ordem):
 		for i in range(ordem, n+1, 1):
 			x = len(y)-1
 			y.append(y[x]+((3/2)*h*f[x])-((1/2)*h*f[x-1]))
-			f.append(solver(func, y[x+1], t[x+2]))
+			f.append(solver(func, y[x+1], t[i]))
 			print(i, ' ', y[i], file=arquivo)
 	
 	if ordem == 3:
 		for i in range(ordem, n+1, 1):
 			x = len(y)-1
 			y.append(y[x]+((23/12)*h*f[x])-((4/3)*h*f[x-1])+((5/12)*h*f[x-2]))
-			f.append(solver(func, y[x+1], t[x+2]))
+			f.append(solver(func, y[x+1], t[i]))
 			print(i, ' ', y[i], file=arquivo)
 
 	if ordem == 4:
 		for i in range(ordem, n+1, 1):
 			x = len(y)-1
 			y.append(y[x]+((55/24)*h*f[x])-((59/24)*h*f[x-1])+((37/24)*h*f[x-2])-((3/8)*h*f[x-3]))
-			f.append(solver(func, y[x+1], t[x+2]))
+			f.append(solver(func, y[x+1], t[i]))
 			print(i, ' ', y[i], file=arquivo)
 
 	if ordem == 5:
 		for i in range(ordem, n+1, 1):
 			x = len(y)-1
 			y.append(y[x]+(h*((1901/720)*f[x]-(1387/360)*f[x-1]+(109/30)*f[x-2]-(637/360)*f[x-3]+(251/720)*f[x-4])))
-			f.append(solver(func, y[x+1], t[x+2]))
+			f.append(solver(func, y[x+1], t[i]))
 			print(i, ' ', y[i], file=arquivo)
 	
 	if ordem == 6:
 		for i in range(ordem, n+1, 1):
 			x = len(y)-1
 			y.append(y[x]+(4277/1440)*h*f[x]-(2641/480)*h*f[x-1]+(4991/720)*h*f[x-2]-(3649/720)*h*f[x-3]+(959/480)*h*f[x-4]-(95/288)*h*f[x-5])
-			f.append(solver(func, y[x+1], t[x+2]))
+			f.append(solver(func, y[x+1], t[i]))
 			print(i, ' ', y[i], file=arquivo)
 
 	if ordem == 7:
 		for i in range(ordem, n+1, 1):
 			x = len(y)-1
 			y.append(y[x]+(((198721/60480)*h*f[x]-(18637/2520)*h*f[x-1]+(235183/20160)*h*f[x-2]-(10754/945)*h*f[x-3]+(135713/20160)*h*f[x-4]-(5603/2520)*h*f[x-5]+(19087/60480)*h*f[x-6])))
-			f.append(solver(func, y[x+1], t[x+2]))
+			f.append(solver(func, y[x+1], t[i]))
 			print(i, ' ', y[i], file=arquivo)
 
 	if ordem == 8:
 		for i in range(ordem, n+1, 1):
 			x = len(y)-1
 			y.append(y[x]+((((16083/4480)*h*f[x])-((1152169/120960)*h*f[x-1])+((242653/13440)*h*f[x-2])-((296053/13440)*h*f[x-3])+((2102243/120960)*h*f[x-4])-(115747/13440)*h*f[x-5]+(32863/13440)*h*f[x-6]-(5257/17280)*h*f[x-7])))
-			f.append(solver(func, y[x+1], t[x+2]))
+			f.append(solver(func, y[x+1], t[i]))
 			print(i, ' ', y[i], file=arquivo)
 					
 	return 
